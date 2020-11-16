@@ -1,38 +1,109 @@
-.App {
+.html{
+  font-size: 10px;
+  font-family: sans-serif;
+}
+
+p{
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+h1{
+  font-family: "billabong";
+  text-align: center;
+  font-size: 13rem;
+  font-weight: 100;
+  margin: 2rem 0;
+  letter-spacing: -1px;
+  color:"black";
+}
+
+@font-face{
+  font-family: "billabong";
+  src: url("./assets/fonts/Billabong.woff")
+}
+
+.photoGrid{
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.figure{
+  flex-basis: calc(33.333% - 4rem);
+  border: 1px solid black;
+  padding: 2rem;
+  flex-grow: 1;
+  margin: 0 2rem 2rem 2rem;
+}
+
+.photo{
+  width: calc(100% + 4rem);
+  margin: -2rem 0rem 0rem -2rem;
+}
+
+.button-container{
+  display: flex;
+  justify-content: center;
+}
+
+button{
+  flex-basis: 48%;
+  color: red;
+  font-size: 15px;
+  border: 2px solid #f2f2f2;
+  line-height: 2;
+  padding: 5px;
+}
+
+.addIcon{
+  display: table;
+  margin: 20px auto;
+  padding: 40px;
+  background: url("https://cdn.iconscout.com/icon/free/png-512/bmw-5-202750.png");
+  background-size: contain;
+  border: none;
+}
+
+.form{
+  margin: 0 auto;
+  max-width: 360px;
+  padding: 45px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.form input{
+  font-family: sans-serif;
+  background: #f2f2f2;
+  width: 100%;
+  border: none;
+  padding: 15px;
+  box-sizing: border-box;
+  margin: 0 0 15px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.form button{
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  background: #065784;
+  width: 100%;
+  border: none;
+  padding: 15px;
+  color: #f2f2f2;
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.form button:hover{
+  background: grey;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover{
+  border: 1px solid grey;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.link{
+  color: black;
+  text-decoration: none;
 }
