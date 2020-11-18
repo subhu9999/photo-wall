@@ -3,11 +3,12 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import Comments from "./Comments";
 import Photo from "./Photo";
+import {getComment} from "../Store/selector";
 
 const mapState = (state) => {
   return {
     posts: state.posts || [],
-    comments: state.comments || [],
+    comments:  getComment(state),
   };
 };
 
