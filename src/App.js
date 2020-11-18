@@ -11,10 +11,10 @@ import { bindActionCreators } from "redux";
 import * as actions from "./redux/actions";
 import Single from "./Components/Single";
 
-
 const mapStateToProps = (state) => {
   return {
-    posts: state,
+    posts: state.posts,
+    comments: state.comments,
   };
 };
 
@@ -23,6 +23,17 @@ const mapActionsToProp = (dispatch) => {
 };
 
 class App extends Component {
+
+  state = {
+    loading: true
+  }
+
+  componentDidMount = () => {
+    this.props.fetchPosts().then(() => {
+      this.setState({loading: false})
+    });
+  };
+
   render() {
     // console.log(this.props);
 
@@ -33,9 +44,7 @@ class App extends Component {
         <Route
           path="/single/:id"
           exact
-          render={({history}) => <Photo render={() => (
-            <Single/>
-          )} />}
+          render={(params) => <Single {...params} loading={this.state.loading}/>}
         />
 
         <Route
@@ -49,9 +58,9 @@ class App extends Component {
         <Route
           path="/"
           exact
-          render={() => (
+          render={(params) => (
             <div>
-              <PhotoWall {...this.props} />
+              <PhotoWall {...this.props} params={params} />
             </div>
           )}
         />
@@ -60,5 +69,5 @@ class App extends Component {
   }
 }
 
-// export default connect(mapStateToProps, mapActionsToProp)(App);
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, mapActionsToProp)(App);
+// export default connect(mapStateToProps)(App);
