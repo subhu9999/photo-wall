@@ -59,6 +59,7 @@ const Photo = (props) => {
         })
       }
 
+
       {isFav ? 
         <div className="div-fav-mini" onClick={handleToggleFav}>
         <img src="https://cpng.pikpng.com/pngl/s/590-5903480_red-heart-with-ochre-outline-clip-art-love.png" className="img-fav-mini"/>

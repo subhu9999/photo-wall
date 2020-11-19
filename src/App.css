@@ -25,6 +25,16 @@
   height: 90px;
 }
 
+.div-large{
+  margin: 0 auto;
+}
+
+.img-fav-large{
+  width: 500px;
+  height: 500px;
+  margin: 10px;
+}
+
 .img-fav-mini{
   width: 40px;
   height: 40px;

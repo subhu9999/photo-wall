@@ -51,7 +51,7 @@ class App extends Component {
         <Route
           path="/fav"
           exact
-          render={(params) => <Favorites {...params} />}
+          render={(params) => <Favorites params={params} />}
         />
 
         <Route
