@@ -4,6 +4,7 @@ import AddPhoto from "./Components/AddPhoto";
 import PhotoWall from "./Components/PhotoWall";
 import Photo from "./Components/Photo";
 import Favorites from "./Components/Favorites";
+import Unsplash from "./Components/Unsplash/Unsplash";
 import Title from "./Components/Title";
 import { Route, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
@@ -41,12 +42,11 @@ class App extends Component {
       <div className="App html">
         <Title title="PhotoWall" />
 
-        <div className="div-fav" onClick={() => this.props.history.push("/fav")}>
-          <img
-            src="https://purepng.com/public/uploads/large/heart-icon-y1k.png"
-            className="img-fav"
-          />
-        </div>
+        <Route
+          path="/unsplash-api"
+          exact
+          render={(params) => <Unsplash params ={params}/>}
+        />
 
         <Route
           path="/fav"

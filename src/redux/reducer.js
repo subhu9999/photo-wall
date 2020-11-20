@@ -7,6 +7,12 @@ import {
   TOGGLE_FAV,
 } from "./actions";
 import { combineReducers } from "redux";
+import {
+  errorReducer,
+  imagesReducer,
+  loadingReducer,
+  pageReducer,
+} from "../Components/Unsplash/reducers";
 
 const favReducer = (state = [], action) => {
   switch (action.type) {
@@ -14,9 +20,9 @@ const favReducer = (state = [], action) => {
       if (state.includes(action.payload)) {
         return [...state.filter((post) => post !== action.payload)];
       } else {
-        return [...state,action.payload];
+        return [...state, action.payload];
       }
-      
+
     default:
       return state;
   }
@@ -62,5 +68,9 @@ const postReducer = (state = posts, action) => {
 export default combineReducers({
   posts: postReducer,
   comments: commentReducer,
-  fav: favReducer
+  fav: favReducer,
+  isLoading: loadingReducer,
+  images: imagesReducer,
+  error: errorReducer,
+  nextPage: pageReducer,
 });

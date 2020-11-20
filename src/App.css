@@ -12,6 +12,14 @@
   margin-top: 150px;
 }
 
+.div-unsplash{
+  flex: block;
+  position: fixed; 
+  cursor: pointer;
+  margin-left: 25px;
+  margin-top: 50px;
+}
+
 .div-fav-mini{
   display: flex;
   cursor: pointer;
@@ -23,6 +31,7 @@
 .img-fav{
   width: 90px;
   height: 90px;
+  object-fit: scale-down;
 }
 
 .div-large{
@@ -93,6 +102,8 @@ h3{
   justify-content: center;
   /* background-image: url("https://www.pinclipart.com/picdir/middle/543-5431019_nail-polish-hand-nail-transparent-background-loading-icon.png"); */
 }
+
+
 
 .photo{
   width: calc(100% + 4rem);
@@ -202,4 +213,14 @@ button:hover{
 .count{
   font-size: medium;
   text-decoration: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
 }

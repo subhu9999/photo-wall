@@ -10,6 +10,12 @@ const Favorites = (props) => {
     favs: getFav(state),
   }));
 
+  if(favs.length === 0){
+    return <div>
+      <h3>... No Favorites Selected</h3>
+    </div>
+  }
+
   return (
     <div>
       <h3>Favorites</h3>
