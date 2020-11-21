@@ -40,12 +40,6 @@ class PhotoWall extends Component {
           +
         </Link>
 
-        <button className="fav-link">
-          <img
-            className="fav-main"
-            src="https://purepng.com/public/uploads/large/heart-icon-y1k.png"
-          />
-        </button>
 
         <div className="photoGrid">
           {this.props.posts &&

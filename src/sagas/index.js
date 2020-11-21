@@ -16,7 +16,7 @@ function* testWorkerSaga() {
 //root saga
 function* rootSaga(){
   yield [
-    fork(testWatcherSaga), // saga1 can also yield [ fork(actionOne), fork(actionTwo) ]
+    fork(testWatcherSaga),
     fork(watchImagesLoad)
 ];
 }

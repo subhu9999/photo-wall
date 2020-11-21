@@ -4,7 +4,6 @@ import AddPhoto from "./Components/AddPhoto";
 import PhotoWall from "./Components/PhotoWall";
 import Favorites from "./Components/Favorites";
 import Photo from "./Components/Photo";
-import Favorites from "./Components/Favorites";
 import Unsplash from "./Components/Unsplash/Unsplash";
 import Title from "./Components/Title";
 import { Route, withRouter } from "react-router-dom";
@@ -55,11 +54,6 @@ class App extends Component {
           render={(params) => <Unsplash params ={params}/>}
         />
 
-        <Route
-          path="/fav"
-          exact
-          render={(params) => <Favorites params={params} />}
-        />
 
         <Route
           path="/single/:id"
