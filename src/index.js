@@ -8,15 +8,23 @@ import { createStore, applyMiddleware, compose } from "redux";
 import { Provider } from "react-redux";
 import rootReducer from "./redux/reducer";
 import thunk from "redux-thunk";
+import createSaga from "redux-saga";
 import firebase from "./config";
+import rootSaga from "./sagas/index";
+
+const sagaMiddleware = createSaga();
 
 const store = createStore(
   rootReducer,
   compose(
-    applyMiddleware(thunk),
+    applyMiddleware(thunk, sagaMiddleware),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   )
 );
+
+sagaMiddleware.run(rootSaga);
+
+store.dispatch({ type: "HELLO" });
 
 ReactDOM.render(
   <React.StrictMode>

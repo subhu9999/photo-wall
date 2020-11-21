@@ -1,7 +1,52 @@
 .html{
   font-size: 10px;
   font-family: sans-serif;
-  margin: -100px
+  margin-top: -100px;
+}
+
+.div-fav{
+  flex: block;
+  position: fixed; 
+  cursor: pointer;
+  margin-left: 25px;
+  margin-top: 150px;
+}
+
+.div-unsplash{
+  flex: block;
+  position: fixed; 
+  cursor: pointer;
+  margin-left: 25px;
+  margin-top: 50px;
+}
+
+.div-fav-mini{
+  display: flex;
+  cursor: pointer;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.img-fav{
+  width: 90px;
+  height: 90px;
+  object-fit: scale-down;
+}
+
+.div-large{
+  margin: 0 auto;
+}
+
+.img-fav-large{
+  width: 500px;
+  height: 500px;
+  margin: 10px;
+}
+
+.img-fav-mini{
+  width: 40px;
+  height: 40px;
 }
 
 p{
@@ -29,7 +74,18 @@ h1{
   margin: 2rem 0;
   letter-spacing: -1px;
   color:"black";
-  height: 300px;
+  height: 250px;
+}
+
+h3{
+  font-family: "billabong";
+  text-align: center;
+  font-size: 9rem;
+  font-weight: 70;
+  margin: 2rem 0;
+  letter-spacing: -1px;
+  color:"black";
+  height: 150px;
 }
 
 
@@ -80,6 +136,8 @@ h1{
   justify-content: center;
   /* background-image: url("https://www.pinclipart.com/picdir/middle/543-5431019_nail-polish-hand-nail-transparent-background-loading-icon.png"); */
 }
+
+
 
 .photo{
   width: calc(100% + 4rem);
@@ -191,50 +249,12 @@ button:hover{
   text-decoration: none;
 }
 
-/* snakbar */
-.snackbar {
-  visibility: hidden;
-  min-width: 250px;
-  margin-left: -125px;
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  border-radius: 2px;
-  padding: 16px;
-  position: fixed;
-  z-index: 1;
-  left: 50%;
-  bottom: 30px;
-  font-size: 1rem;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
 }
 
-.snackbar.show {
-  visibility: visible; /* Show the snackbar */
-  /* Add animation: Take 0.5 seconds to fade in and out the snackbar. 
- However, delay the fade out process for 2.5 seconds */
- -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
- animation: fadein 0.5s, fadeout 0.5s 2.5s;
+* {
+  box-sizing: border-box;
 }
-
-/* Animations to fade the snackbar in and out */
-@-webkit-keyframes fadein {
-  from {bottom: 0; opacity: 0;} 
-  to {bottom: 30px; opacity: 1;}
-}
-
-@keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 30px; opacity: 1;}
-}
-
-@-webkit-keyframes fadeout {
-  from {bottom: 30px; opacity: 1;} 
-  to {bottom: 0; opacity: 0;}
-}
-
-@keyframes fadeout {
-  from {bottom: 30px; opacity: 1;}
-  to {bottom: 0; opacity: 0;}
-}
-
-/* end of snackbar */
