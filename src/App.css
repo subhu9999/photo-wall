@@ -20,6 +20,16 @@
   margin-top: 50px;
 }
 
+
+.div-redux-form{
+  flex: block;
+  position: fixed; 
+  cursor: pointer;
+  margin-left: 25px;
+  margin-top: -50px;
+  border-radius: 100%;
+}
+
 .div-fav-mini{
   display: flex;
   cursor: pointer;
@@ -32,6 +42,11 @@
   width: 90px;
   height: 90px;
   object-fit: scale-down;
+  border-radius: 100%;
+}
+
+.form{
+  margin: 0 auto;
 }
 
 .div-large{

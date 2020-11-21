@@ -13,6 +13,7 @@ import {
   loadingReducer,
   pageReducer,
 } from "../Components/Unsplash/reducers";
+import {reducer as formReducer} from 'redux-form';
 
 const favReducer = (state = [], action) => {
   switch (action.type) {
@@ -73,4 +74,5 @@ export default combineReducers({
   images: imagesReducer,
   error: errorReducer,
   nextPage: pageReducer,
+  form: formReducer
 });

@@ -17,6 +17,16 @@ class PhotoWall extends Component {
     return (
       <div>
         <div
+          className="div-redux-form"
+          onClick={() => this.props.history.push("/redux-form")}
+        >
+          <img
+            src="https://avatars3.githubusercontent.com/u/18400130?s=400&v=4"
+            className="img-fav"
+          />
+        </div>
+
+        <div
           className="div-unsplash"
           onClick={() => this.props.history.push("/unsplash-api")}
         >

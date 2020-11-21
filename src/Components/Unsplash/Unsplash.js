@@ -11,11 +11,8 @@ const Unsplash = (props) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // console.log(newGen().next());
-    if (images.length === 0) {
-      fetchImages();
-    }
-  }, [images]);
+    dispatch({ type: LOAD_IMAGES });
+  }, []);
 
   const fetchImages = () => {
     fetch(`https://api.unsplash.com/photos/?client_id=${key}&per_page=28`)
@@ -65,9 +62,10 @@ const Unsplash = (props) => {
               />
             </div>
           ))}
-
-          <button onClick={() => dispatch({type: LOAD_IMAGES})}>Load Images</button>
         </section>
+        <button onClick={() => dispatch({ type: LOAD_IMAGES })}>
+            Load More
+          </button>
       </div>
     </React.Fragment>
   );

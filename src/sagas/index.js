@@ -1,4 +1,4 @@
-import { takeEvery, put,fork } from "redux-saga/effects";
+import { takeEvery, put, fork, all } from "redux-saga/effects";
 import watchImagesLoad from "./imagesSaga";
 
 //watcher saga
@@ -14,11 +14,8 @@ function* testWorkerSaga() {
 }
 
 //root saga
-function* rootSaga(){
-  yield [
-    fork(testWatcherSaga),
-    fork(watchImagesLoad)
-];
+function* rootSaga() {
+  yield all([testWatcherSaga(), watchImagesLoad()]);
 }
 
 export default rootSaga;

@@ -24,7 +24,7 @@ const Favorites = (props) => {
           favs
             .sort((x, y) => y.id - x.id)
             .map((post, index) => (
-              <div className="div-large">
+              <div className="div-large" key={index}>
                 <img src={post.imageLink} className="img-fav-large" />
               </div>
             ))}

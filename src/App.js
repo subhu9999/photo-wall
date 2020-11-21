@@ -12,6 +12,7 @@ import { removePost } from "./redux/actions";
 import { bindActionCreators } from "redux";
 import * as actions from "./redux/actions";
 import Single from "./Components/Single";
+import Form from "./Components/Form/Form";
 
 const mapStateToProps = (state) => {
   return {
@@ -42,7 +43,7 @@ class App extends Component {
       <div className="App html">
         <Title title="PhotoWall" />
 
-        <Route 
+        <Route
           path="/fav"
           exact
           render={(params) => <Favorites {...params} />}
@@ -51,9 +52,14 @@ class App extends Component {
         <Route
           path="/unsplash-api"
           exact
-          render={(params) => <Unsplash params ={params}/>}
+          render={(params) => <Unsplash params={params} />}
         />
 
+        <Route
+          path="/redux-form"
+          exact
+          render={(params) => <Form params={params} />}
+        />
 
         <Route
           path="/single/:id"
