@@ -6,6 +6,14 @@ export const ADD_POST = "ADD_POST";
 export const ADD_COMMENT = "ADD_COMMENT";
 export const REMOVE_COMMENT = "REMOVE_COMMENT";
 export const LOAD_POSTS = "LOAD_POSTS";
+export const TOGGLE_FAV = "TOGGLE_FAV";
+
+export const toggleFav = (postId) => {
+ return {
+   type: TOGGLE_FAV,
+   payload: postId
+ }
+}
 
 export const startAddingPost = (post) => {
   return async (dispatch, getState) => {

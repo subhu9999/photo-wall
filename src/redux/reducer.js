@@ -1,6 +1,32 @@
 import posts from "../data/posts";
-import { ADD_COMMENT, ADD_POST, LOAD_POSTS, REMOVE_POST } from "./actions";
+import {
+  ADD_COMMENT,
+  ADD_POST,
+  LOAD_POSTS,
+  REMOVE_POST,
+  TOGGLE_FAV,
+} from "./actions";
 import { combineReducers } from "redux";
+import {
+  errorReducer,
+  imagesReducer,
+  loadingReducer,
+  pageReducer,
+} from "../Components/Unsplash/reducers";
+
+const favReducer = (state = [], action) => {
+  switch (action.type) {
+    case TOGGLE_FAV:
+      if (state.includes(action.payload)) {
+        return [...state.filter((post) => post !== action.payload)];
+      } else {
+        return [...state, action.payload];
+      }
+
+    default:
+      return state;
+  }
+};
 
 const commentReducer = (state = {}, action) => {
   switch (action.type) {
@@ -42,4 +68,9 @@ const postReducer = (state = posts, action) => {
 export default combineReducers({
   posts: postReducer,
   comments: commentReducer,
+  fav: favReducer,
+  isLoading: loadingReducer,
+  images: imagesReducer,
+  error: errorReducer,
+  nextPage: pageReducer,
 });

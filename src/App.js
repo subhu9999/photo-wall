@@ -3,6 +3,8 @@ import "./App.css";
 import AddPhoto from "./Components/AddPhoto";
 import PhotoWall from "./Components/PhotoWall";
 import Photo from "./Components/Photo";
+import Favorites from "./Components/Favorites";
+import Unsplash from "./Components/Unsplash/Unsplash";
 import Title from "./Components/Title";
 import { Route, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
@@ -23,14 +25,13 @@ const mapActionsToProp = (dispatch) => {
 };
 
 class App extends Component {
-
   state = {
-    loading: true
-  }
+    loading: true,
+  };
 
   componentDidMount = () => {
     this.props.fetchPosts().then(() => {
-      this.setState({loading: false})
+      this.setState({ loading: false });
     });
   };
 
@@ -42,9 +43,23 @@ class App extends Component {
         <Title title="PhotoWall" />
 
         <Route
+          path="/unsplash-api"
+          exact
+          render={(params) => <Unsplash params ={params}/>}
+        />
+
+        <Route
+          path="/fav"
+          exact
+          render={(params) => <Favorites params={params} />}
+        />
+
+        <Route
           path="/single/:id"
           exact
-          render={(params) => <Single {...params} loading={this.state.loading}/>}
+          render={(params) => (
+            <Single {...params} loading={this.state.loading} />
+          )}
         />
 
         <Route
@@ -69,5 +84,5 @@ class App extends Component {
   }
 }
 
-export default connect(mapStateToProps, mapActionsToProp)(App);
+export default withRouter(connect(mapStateToProps, mapActionsToProp)(App));
 // export default connect(mapStateToProps)(App);
