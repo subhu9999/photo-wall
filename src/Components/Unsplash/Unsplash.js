@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./Unsplash.css";
-import { setImages } from "./actions";
+import { loadImages, setImages } from "./actions";
 
 const key = "5f96323678d05ff0c4eb264ef184556868e303b32a2db88ecbf15746e6f25e02";
 
@@ -13,7 +13,7 @@ const Unsplash = (props) => {
   useEffect(() => {
     // console.log(newGen().next());
     if (images.length === 0) {
-      fetchImages();
+      // fetchImages();
     }
   }, [images]);
 
@@ -65,6 +65,8 @@ const Unsplash = (props) => {
               />
             </div>
           ))}
+
+          {/* <button onClick={() => dispatch(load)}>Load Images</button> */}
         </section>
       </div>
     </React.Fragment>
