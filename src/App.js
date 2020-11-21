@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import AddPhoto from "./Components/AddPhoto";
 import PhotoWall from "./Components/PhotoWall";
+import Favorites from "./Components/Favorites";
 import Photo from "./Components/Photo";
 import Title from "./Components/Title";
 import { Route, withRouter } from "react-router-dom";
@@ -40,6 +41,12 @@ class App extends Component {
     return (
       <div className="App html">
         <Title title="PhotoWall" />
+
+        <Route 
+          path="/fav"
+          exact
+          render={(params) => <Favorites {...params} />}
+        />
 
         <Route
           path="/single/:id"

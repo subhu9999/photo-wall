@@ -1,11 +1,24 @@
 .html{
   font-size: 10px;
   font-family: sans-serif;
+  margin: -100px
 }
 
 p{
   font-size: 1.6rem;
   line-height: 1.5;
+}
+
+.fav-link{
+  display: block;
+  position: fixed;
+  margin-left: 150px;
+  margin-top: 200px;
+}
+
+.fav-main{
+  height: 80px;
+  width: 80px;
 }
 
 h1{
@@ -19,9 +32,31 @@ h1{
   height: 300px;
 }
 
+
 @font-face{
   font-family: "billabong";
   src: url("./assets/fonts/Billabong.woff")
+}
+
+.kc_fab_main_btn{
+  width:60px;
+  height:60px;
+  margin-left: 100px;
+  border-radius:100%;
+  background-image: url("https://purepng.com/public/uploads/large/heart-icon-y1k.png");
+  border:none;
+  outline:none;
+  color:#FFF;
+  font-size:36px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  transition:.3s;  
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.kc_fab_main_btn:focus {
+  transform:scale(1.1);
+  transform:rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
 }
 
 .photoGrid{
@@ -155,3 +190,51 @@ button:hover{
   font-size: medium;
   text-decoration: none;
 }
+
+/* snakbar */
+.snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 1rem;
+}
+
+.snackbar.show {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar. 
+ However, delay the fade out process for 2.5 seconds */
+ -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+ animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+/* end of snackbar */

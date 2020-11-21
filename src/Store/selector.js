@@ -5,5 +5,6 @@ const getComments = (state) => {
 }
 
 export const getComment = createSelector([getComments],(getComments) => {
+    console.log("get commemt")
     return getComments;
 });
