@@ -1,7 +1,7 @@
 import React from "react";
-import PhotoWall from "./PhotoWall";
-import { Link } from "react-router-dom";
-import Photo from "./Photo";
+// import PhotoWall from "./PhotoWall";
+// import { Link } from "react-router-dom";
+// import Photo from "./Photo";
 import { useSelector } from "react-redux";
 import { getFav } from "../Store/selector";
 

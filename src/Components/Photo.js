@@ -45,6 +45,7 @@ const Photo = (props) => {
           <img
             className="comment-bubble"
             src="https://cdn0.iconfinder.com/data/icons/free-daily-icon-set/512/Comments-512.png"
+            alt={post.id}
           />
           <p className="count">
             {props.comments[post.id] ? props.comments[post.id].length : 0}
@@ -62,7 +63,7 @@ const Photo = (props) => {
 
       {isFav ? 
         <div className="div-fav-mini" onClick={handleToggleFav}>
-        <img src="https://cpng.pikpng.com/pngl/s/590-5903480_red-heart-with-ochre-outline-clip-art-love.png" className="img-fav-mini"/>
+        <img src="https://cpng.pikpng.com/pngl/s/590-5903480_red-heart-with-ochre-outline-clip-art-love.png" className="img-fav-mini" alt="fav-mini" />
       </div>
       :
       <div className="div-fav-mini" onClick={handleToggleFav}>
