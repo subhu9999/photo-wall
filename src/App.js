@@ -3,12 +3,12 @@ import "./App.css";
 import AddPhoto from "./Components/AddPhoto";
 import PhotoWall from "./Components/PhotoWall";
 import Favorites from "./Components/Favorites";
-import Photo from "./Components/Photo";
+// import Photo from "./Components/Photo";
 import Unsplash from "./Components/Unsplash/Unsplash";
 import Title from "./Components/Title";
 import { Route, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { removePost } from "./redux/actions";
+// import { removePost } from "./redux/actions";
 import { bindActionCreators } from "redux";
 import * as actions from "./redux/actions";
 import Single from "./Components/Single";
@@ -24,6 +24,10 @@ const mapStateToProps = (state) => {
 const mapActionsToProp = (dispatch) => {
   return bindActionCreators(actions, dispatch);
 };
+
+export const testAdd = (x,y) => {
+  return x+y;
+}
 
 class App extends Component {
   state = {

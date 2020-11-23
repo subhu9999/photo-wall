@@ -4,6 +4,12 @@
   margin-top: -100px;
 }
 
+.error-validate{
+  display: table;
+  margin: 0 auto;
+  margin-bottom: 4px !important;
+}
+
 .div-fav{
   flex: block;
   position: fixed; 
