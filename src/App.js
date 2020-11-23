@@ -25,6 +25,10 @@ const mapActionsToProp = (dispatch) => {
   return bindActionCreators(actions, dispatch);
 };
 
+export const testAdd = (x,y) => {
+  return x+y;
+}
+
 class App extends Component {
   state = {
     loading: true,
